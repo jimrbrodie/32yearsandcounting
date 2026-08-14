@@ -1,0 +1,24 @@
+---
+layout: default
+title: Articles
+permalink: /articles/
+---
+<div class="wrap section">
+  <div class="section-header">
+    <span class="eyebrow">Articles</span>
+    <h1>Longer reads</h1>
+    <p>Deeper stories, reflections and family history &mdash; the pieces that need a bit more room to breathe.</p>
+  </div>
+  <div class="card-grid">
+    {% for article in site.articles %}
+    <div class="card">
+      <p class="meta">{{ article.date | date: "%-d %B %Y" }}</p>
+      <h3><a href="{{ article.url | relative_url }}">{{ article.title }}</a></h3>
+      <p>{{ article.excerpt | strip_html | truncate: 140 }}</p>
+      <a class="read-more" href="{{ article.url | relative_url }}">Read more &rarr;</a>
+    </div>
+    {% else %}
+    <p>No articles yet &mdash; add one to <code>_articles/</code> to get started.</p>
+    {% endfor %}
+  </div>
+</div>

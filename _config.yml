@@ -1,0 +1,47 @@
+title: "32 Years and Counting"
+tagline: "A love story still being written"
+description: >-
+  The family blog of Jim and family — stories, snapshots and
+  everyday moments from a life built together.
+url: "https://www.32yearsandcounting.co.uk"
+baseurl: ""
+
+# --- Personalise these ---
+author_names: "Jim & [Wife's name]"
+site_email: "hello@32yearsandcounting.co.uk"
+
+markdown: kramdown
+permalink: /blog/:year/:month/:day/:title/
+
+collections:
+  articles:
+    output: true
+    permalink: /articles/:title/
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "articles"
+    values:
+      layout: "article"
+  - scope:
+      path: ""
+    values:
+      layout: "page"
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - node_modules
+  - preview

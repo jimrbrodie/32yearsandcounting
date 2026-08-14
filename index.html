@@ -1,0 +1,76 @@
+---
+layout: default
+title: Home
+---
+<section class="hero">
+  <div class="wrap">
+    <img class="hero-mark" src="{{ '/assets/img/logo-mark.jpg' | relative_url }}" alt="{{ site.title }} logo">
+    <h1>{{ site.title }}</h1>
+    <p class="lede">{{ site.description }}</p>
+    <a class="btn" href="{{ '/blog/' | relative_url }}">Read the blog</a>
+    <a class="btn btn-outline" href="{{ '/about/' | relative_url }}" style="margin-left:12px;">Our story</a>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-header">
+      <span class="eyebrow">Latest from the blog</span>
+      <h2>Recent moments</h2>
+    </div>
+    <div class="card-grid">
+      {% assign recent_posts = site.posts | slice: 0, 3 %}
+      {% for post in recent_posts %}
+      <div class="card">
+        <p class="meta">{{ post.date | date: "%-d %B %Y" }}</p>
+        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+        <p>{{ post.excerpt | strip_html | truncate: 120 }}</p>
+        <a class="read-more" href="{{ post.url | relative_url }}">Read more &rarr;</a>
+      </div>
+      {% else %}
+      <div class="card">
+        <p class="meta">Coming soon</p>
+        <h3>Your first post is waiting</h3>
+        <p>Add a file to <code>_posts/</code> and it'll show up here automatically.</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="wrap">
+    <div class="section-header">
+      <span class="eyebrow">Longer reads</span>
+      <h2>Featured articles</h2>
+    </div>
+    <div class="card-grid">
+      {% assign recent_articles = site.articles | slice: 0, 3 %}
+      {% for article in recent_articles %}
+      <div class="card">
+        <p class="meta">{{ article.date | date: "%-d %B %Y" }}</p>
+        <h3><a href="{{ article.url | relative_url }}">{{ article.title }}</a></h3>
+        <p>{{ article.excerpt | strip_html | truncate: 120 }}</p>
+        <a class="read-more" href="{{ article.url | relative_url }}">Read more &rarr;</a>
+      </div>
+      {% else %}
+      <div class="card">
+        <p class="meta">Coming soon</p>
+        <h3>Your first article is waiting</h3>
+        <p>Add a file to <code>_articles/</code> and it'll show up here automatically.</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap" style="text-align:center;">
+    <div class="section-header">
+      <span class="eyebrow">Stay in touch</span>
+      <h2>Sign our guestbook</h2>
+    </div>
+    <p class="lede" style="margin-left:auto; margin-right:auto;">Family and friends &mdash; drop us a note and let us know you stopped by.</p>
+    <a class="btn" href="{{ '/contact/' | relative_url }}">Visit the guestbook</a>
+  </div>
+</section>

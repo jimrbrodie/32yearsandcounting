@@ -1,0 +1,24 @@
+---
+layout: default
+title: Blog
+permalink: /blog/
+---
+<div class="wrap section">
+  <div class="section-header">
+    <span class="eyebrow">The Blog</span>
+    <h1>Everyday moments</h1>
+    <p>Snapshots from our life together &mdash; the big milestones and the small ordinary days worth remembering.</p>
+  </div>
+  <div class="card-grid">
+    {% for post in site.posts %}
+    <div class="card">
+      <p class="meta">{{ post.date | date: "%-d %B %Y" }}</p>
+      <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+      <p>{{ post.excerpt | strip_html | truncate: 140 }}</p>
+      <a class="read-more" href="{{ post.url | relative_url }}">Read more &rarr;</a>
+    </div>
+    {% else %}
+    <p>No posts yet &mdash; your first story is just one markdown file away.</p>
+    {% endfor %}
+  </div>
+</div>

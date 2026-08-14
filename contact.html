@@ -1,0 +1,57 @@
+---
+layout: default
+title: Contact & Guestbook
+permalink: /contact/
+---
+<div class="wrap section">
+  <div class="section-header">
+    <span class="eyebrow">Get in touch</span>
+    <h1>Contact &amp; Guestbook</h1>
+    <p>Send us a message, or leave a note below for everyone to see.</p>
+  </div>
+
+  <div class="contact-grid">
+    <div>
+      <h2>Send a message</h2>
+      <!--
+        This form is set up for Formspree (formspree.io) — a free service
+        that emails form submissions to you without needing a server.
+        1. Create a free account at formspree.io
+        2. Create a new form and copy its endpoint
+        3. Replace YOUR_FORM_ID below with that endpoint's ID
+      -->
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="form-field">
+          <label for="name">Your name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-field">
+          <label for="email">Your email</label>
+          <input type="email" id="email" name="_replyto" required>
+        </div>
+        <div class="form-field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn">Send message</button>
+      </form>
+    </div>
+
+    <div>
+      <h2>Guestbook</h2>
+      <p style="color:var(--navy-light); font-size:0.92rem;">A few notes from family and friends. (Replace with real entries, or connect the form above to add new ones here.)</p>
+
+      <div class="guestbook-note">
+        <p class="who">Auntie Sue</p>
+        <p class="when">March 2026</p>
+        <p style="margin:8px 0 0;">So lovely to see this &mdash; can't wait to read more!</p>
+      </div>
+
+      <div class="guestbook-note">
+        <p class="who">The Neighbours</p>
+        <p class="when">February 2026</p>
+        <p style="margin:8px 0 0;">What a wonderful idea for a family blog. Bookmarked!</p>
+      </div>
+    </div>
+  </div>
+</div>

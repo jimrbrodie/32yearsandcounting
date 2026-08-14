@@ -1,0 +1,20 @@
+---
+layout: default
+---
+<div class="article-header">
+  <div class="wrap">
+    {% if page.tags %}
+      {% for tag in page.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
+    {% endif %}
+    <h1>{{ page.title }}</h1>
+    <p class="meta">{{ page.date | date: "%-d %B %Y" }}{% if page.author %} &middot; {{ page.author }}{% endif %}</p>
+  </div>
+</div>
+<div class="wrap">
+  <article class="article-content">
+    {{ content }}
+  </article>
+  <p style="text-align:center; margin-top:48px;">
+    <a class="btn btn-outline" href="{{ '/articles/' | relative_url }}">&larr; Back to Articles</a>
+  </p>
+</div>
