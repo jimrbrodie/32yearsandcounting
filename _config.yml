@@ -3,8 +3,12 @@ tagline: "A love story still being written"
 description: >-
   The family blog of Jim and Kate — stories, snapshots and
   everyday moments from a life built together.
-url: "https://www.32yearsandcounting.co.uk"
-baseurl: ""
+# TEMPORARY: custom domain DNS isn't live yet, so the site is only reachable
+# at the github.io project URL below. Once www.32yearsandcounting.co.uk
+# resolves and is confirmed working in GitHub Pages settings, switch these
+# back to url: "https://www.32yearsandcounting.co.uk" and baseurl: "".
+url: "https://jimrbrodie.github.io"
+baseurl: "/32yearsandcounting"
 
 # --- Personalise these ---
 author_names: "Jim & Kate"
